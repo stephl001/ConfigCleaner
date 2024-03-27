@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.categories" Version="2.0.8" />
@@ -28,6 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Configs\Expected\appsettings.test1.json" />
+    <EmbeddedResource Include="Configs\Source\appsettings.test1.json" />
     <None Remove="Configs\appsettings.json" />
     <EmbeddedResource Include="Configs\appsettings.json" />
   </ItemGroup>
