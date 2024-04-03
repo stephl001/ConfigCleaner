@@ -75,5 +75,4 @@ public class UnitTest1
         byte[] buffer = Encoding.UTF8.GetBytes(json);
         return new Utf8JsonReader(buffer);
     }
-
 }

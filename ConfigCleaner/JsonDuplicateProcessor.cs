@@ -7,6 +7,8 @@ public sealed class JsonDuplicateProcessor
 {
     public void Process(IConfiguration baseConfiguration, Utf8JsonReader sourceConfig, Utf8JsonWriter targetConfig)
     {
+        IConfigurationSection section;
+        
         while (sourceConfig.Read())
         {
             switch (sourceConfig.TokenType)
@@ -47,5 +49,16 @@ public sealed class JsonDuplicateProcessor
 
         targetConfig.Flush();
     }
+}
 
+public enum AppSettingElementType
+{
+    Section,
+    Property
+}
+
+public class AppSettingElement : Dictionary<string, AppSettingElement>
+{
+    public AppSettingElementType Type { get; set; }
+    public string? Value { get; set; }
 }
